@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useApp } from "../context/AppContext";
-import { MOCK_AMENITIES, WHY_CHOOSE_US_TIMELINE, DETAILED_NEARBY_PLACES, MOCK_TESTIMONIALS, MOCK_GALLERY, MOCK_FAQ } from "../lib/staticData";
+import { MOCK_AMENITIES, DETAILED_NEARBY_PLACES, MOCK_TESTIMONIALS, MOCK_GALLERY, MOCK_FAQ } from "../lib/staticData";
 
 export default function Home() {
   const router = useRouter();
@@ -55,7 +55,7 @@ export default function Home() {
   const filteredNearbyPlaces = DETAILED_NEARBY_PLACES.filter(
     (place) => place.category === nearbyActiveTab
   );
-  
+
   const visibleNearbyCards = windowWidth >= 1280 ? 4 : windowWidth >= 1024 ? 3 : windowWidth >= 640 ? 2 : 1;
   const maxNearbyCarouselIndex = Math.max(0, filteredNearbyPlaces.length - visibleNearbyCards);
 
@@ -141,24 +141,10 @@ export default function Home() {
     }
   };
 
-  const renderChooseIcon = (iconName: string) => {
-    const props = { className: "w-5 h-5 text-white shrink-0" };
-    switch (iconName) {
-      case "HeartHandshake": return <HeartHandshake {...props} />;
-      case "Gem": return <Gem {...props} />;
-      case "MapPin": return <MapPin {...props} />;
-      case "Smartphone": return <Smartphone {...props} />;
-      case "Salad": return <Salad {...props} />;
-      case "Award": return <Award {...props} />;
-      case "Users": return <Users {...props} />;
-      case "FileText": return <FileText {...props} />;
-      default: return <Sparkles {...props} />;
-    }
-  };
 
   return (
     <div className="space-y-16 pb-16">
-      
+
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-slate-50/50 dark:bg-slate-900/30 pt-16 pb-12 lg:pt-20 lg:pb-14 transition-colors">
         <div className="absolute top-0 right-0 w-[40%] h-[50%] bg-primary/5 rounded-bl-full filter blur-3xl pointer-events-none" />
@@ -166,7 +152,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Column Information */}
             <div className="lg:col-span-7 flex flex-col justify-center space-y-8">
               <motion.div
@@ -209,7 +195,7 @@ export default function Home() {
                 id="search-filter-card"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-                  
+
                   {/* sharing category option selection */}
                   <div className="sm:col-span-5 space-y-1 text-left">
                     <label className="block text-[9px] font-mono font-bold uppercase text-slate-400 tracking-wider">
@@ -319,7 +305,7 @@ export default function Home() {
                   <h4 className="font-display font-extrabold text-sm text-slate-900 dark:text-white">
                     Single Sharing Room
                   </h4>
-                  
+
                   <div className="flex items-center gap-3 pt-1.5 border-t border-slate-100 dark:border-slate-800 text-[9px] text-slate-500 dark:text-slate-400 font-bold font-sans">
                     <span className="flex items-center gap-1">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary"></span> AC
@@ -389,10 +375,10 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-10">
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">Allocated Suites</span>
-            <h2 className="font-display font-bold text-3xl text-slate-855 dark:text-white">Discover Living Suites</h2>
+            <h2 className="font-display font-bold text-3xl text-slate-855 dark:text-white">Discover Rooms</h2>
             <p className="text-sm text-slate-500 font-light max-w-md">Explore Single, Double and Triple Seater options with high safety biometrics.</p>
           </div>
-          
+
           <div className="flex flex-wrap items-center gap-4">
             <button
               onClick={() => router.push("/rooms")}
@@ -422,7 +408,7 @@ export default function Home() {
         </div>
 
         {/* OVERFLOW TRACK CAROUSEL */}
-        <div 
+        <div
           className="relative overflow-hidden -mx-4 px-4 py-2"
           onMouseEnter={() => setIsRoomsHovered(true)}
           onMouseLeave={() => setIsRoomsHovered(false)}
@@ -495,33 +481,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US - STARTUP TIMELINE */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-6" id="about">
-        <div className="text-center mb-16 space-y-3.5">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#f59e0b] font-bold">Proven Performance</span>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-855 dark:text-white">Why students endorse Comfort PG</h2>
-          <p className="text-sm text-slate-500 max-w-xl mx-auto font-light leading-relaxed">A strategic milestone-timeline demonstrating our administration standard operations.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {WHY_CHOOSE_US_TIMELINE.slice(0, 6).map((item, index) => (
-            <div
-              key={item.id}
-              className="p-6 bg-slate-50/50 dark:bg-slate-950/20 border border-slate-100 dark:border-slate-800/80 rounded-3xl relative overflow-hidden transition-all hover:scale-[1.01]"
-            >
-              <div className="absolute top-4 right-4 text-slate-300 dark:text-slate-800/50 font-display font-extrabold text-5xl select-none">
-                0{index + 1}
-              </div>
-              <div className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center mb-4 shadow-md shadow-primary/25">
-                {renderChooseIcon(item.iconName)}
-              </div>
-              <h4 className="font-display font-semibold text-sm text-slate-850 dark:text-white pr-8">{item.title}</h4>
-              <p className="text-xs text-slate-455 mt-2.5 font-sans font-light leading-relaxed">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* VIRTUAL TOUR BANNER SECTION */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="relative rounded-[32px] overflow-hidden bg-slate-950 text-white min-h-[380px] flex items-center p-8 md:p-12 shadow-2xl border border-slate-800">
@@ -576,11 +535,10 @@ export default function Home() {
                 setGalleryTab(category);
                 setIsGalleryExpanded(false);
               }}
-              className={`px-4 py-2 text-xs font-medium font-sans rounded-xl border transition-all cursor-pointer ${
-                galleryTab === category
+              className={`px-4 py-2 text-xs font-medium font-sans rounded-xl border transition-all cursor-pointer ${galleryTab === category
                   ? "bg-primary border-primary text-white shadow-md shadow-primary/15"
                   : "border-slate-250 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-850"
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -711,18 +669,17 @@ export default function Home() {
             <button
               key={tab}
               onClick={() => setNearbyActiveTab(tab as any)}
-              className={`px-4 py-2 text-xs font-medium font-sans rounded-xl border transition-all cursor-pointer ${
-                nearbyActiveTab === tab
+              className={`px-4 py-2 text-xs font-medium font-sans rounded-xl border transition-all cursor-pointer ${nearbyActiveTab === tab
                   ? "bg-emerald-500 border-emerald-500 text-white shadow-md shadow-emerald-500/15"
                   : "border-slate-200 dark:border-slate-800 text-slate-650 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-850"
-              }`}
+                }`}
             >
               {tab}
             </button>
           ))}
         </div>
 
-        <div 
+        <div
           className="relative overflow-hidden -mx-4 px-4 py-2"
           onMouseEnter={() => setIsNearbyHovered(true)}
           onMouseLeave={() => setIsNearbyHovered(false)}
@@ -768,11 +725,10 @@ export default function Home() {
                 setFaqTab(tab);
                 setExpandedFaqId(null);
               }}
-              className={`px-3.5 py-1.5 text-xs font-medium rounded-xl border transition-all cursor-pointer ${
-                faqTab === tab
+              className={`px-3.5 py-1.5 text-xs font-medium rounded-xl border transition-all cursor-pointer ${faqTab === tab
                   ? "bg-primary border-primary text-white shadow-sm"
                   : "border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50"
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -815,27 +771,33 @@ export default function Home() {
       {/* CONTACT CHANNELS & MAPS SECTIONS */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-6" id="contact">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
+
           <div className="lg:col-span-4 bg-primary/5 dark:bg-slate-950 p-6 rounded-3xl border border-slate-150 dark:border-slate-800 flex flex-col justify-between space-y-6 text-left">
             <div className="space-y-4">
               <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">Campus Location</span>
               <h3 className="font-display font-bold text-2xl text-slate-850 dark:text-white leading-tight">Comfort Girls PG Headquarters</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-light font-sans">
-                Plot No. 12, Knowledge Park III, Greater Noida, Uttar Pradesh, 201308
+                <a
+                  href="https://maps.app.goo.gl/QgRkaw7NVeJrFe1YA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-primary transition-colors"
+                >
+                  A-33, 7th Cross St, Block A, Alpha I, Greater Noida, Uttar Pradesh 201310
+                </a>
               </p>
             </div>
 
             <div className="space-y-3.5 text-xs text-slate-600 dark:text-slate-400 font-sans">
               <p>📞 Admission Desk: <strong className="text-slate-850 dark:text-white">+91 99001 12233</strong></p>
-              <p>✉️ Support Helpline: <strong className="text-slate-850 dark:text-white">admissions@comfortpg.in</strong></p>
+              <p>✉️ Support Helpline: <strong className="text-slate-850 dark:text-white">contact@comfortgirlspg.live</strong></p>
               <p>🕒 Warden Check In: <strong className="text-slate-850 dark:text-white">9:00 AM - 8:00 PM Daily</strong></p>
             </div>
           </div>
 
           <div className="lg:col-span-8 rounded-3xl overflow-hidden border border-slate-250/50 dark:border-slate-800 min-h-[300px] relative">
-            {/* Mocked Leaflet/Google Map canvas view */}
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.6063687355177!2d77.48154101508085!3d28.491334182475453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc22129532db3%3A0x6b13b41d08e9d3b1!2sKnowledge%20Park%20III%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1655974000000!5m2!1sen!2sin"
+            <iframe
+              src="https://maps.google.com/maps?q=A-33,%207th%20Cross%20St,%20Block%20A,%20Alpha%20I,%20Greater%20Noida,%20Uttar%20Pradesh%20201310&t=&z=15&ie=UTF8&iwloc=&output=embed"
               className="w-full h-full border-none pointer-events-auto"
               allowFullScreen={true}
               loading="lazy"

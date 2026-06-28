@@ -433,28 +433,66 @@ export default function UserDashboard({
                           />
                         </div>
 
-                        {/* Preset avatar selector */}
-                        <div className="space-y-2">
-                          <label className="text-[9px] text-slate-400 font-mono uppercase tracking-widest block font-bold">Select Digital Avatar Badge</label>
-                          <div className="flex gap-2">
-                            {[
-                              "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150",
-                              "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
-                              "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150",
-                              "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=150"
-                            ].map((url) => (
-                              <button
-                                key={url}
-                                type="button"
-                                onClick={() => setEditAvatar(url)}
-                                className={`relative rounded-full p-0.5 border-2 transition ${editAvatar === url ? "border-primary" : "border-transparent"}`}
-                              >
-                                <img src={url} className="w-8 h-8 rounded-full object-cover" />
-                                {editAvatar === url && (
-                                  <div className="absolute -bottom-0.5 -right-0.5 bg-primary text-white rounded-full p-0.5 text-[6px]">✓</div>
-                                )}
-                              </button>
-                            ))}
+                        {/* Upload and Preset avatar selector */}
+                        <div className="space-y-3">
+                          <label className="text-[9px] text-slate-400 font-mono uppercase tracking-widest block font-bold">Digital Avatar / Profile Picture</label>
+                          
+                          {/* Live Avatar Preview and File Upload Input */}
+                          <div className="flex items-center gap-4 p-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+                            <img 
+                              src={editAvatar || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"} 
+                              className="w-12 h-12 rounded-full object-cover border border-slate-200 dark:border-slate-700 shadow-inner" 
+                              referrerPolicy="no-referrer"
+                            />
+                            <div className="flex flex-col gap-1.5 text-left">
+                              <label className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-750 dark:text-slate-250 font-semibold rounded-xl text-[10px] cursor-pointer transition-colors border border-slate-200 dark:border-slate-700 w-fit">
+                                Choose Image File
+                                <input
+                                  type="file"
+                                  accept="image/*"
+                                  className="hidden"
+                                  onChange={(e) => {
+                                    const file = e.target.files?.[0];
+                                    if (file) {
+                                      if (file.size > 2 * 1024 * 1024) {
+                                        alert("Please select an image smaller than 2MB to ensure fast profile syncing.");
+                                        return;
+                                      }
+                                      const reader = new FileReader();
+                                      reader.onloadend = () => {
+                                        setEditAvatar(reader.result as string);
+                                      };
+                                      reader.readAsDataURL(file);
+                                    }
+                                  }}
+                                />
+                              </label>
+                              <span className="text-[8px] text-slate-400 font-light font-sans">Supports PNG, JPG, GIF up to 2MB</span>
+                            </div>
+                          </div>
+
+                          <div className="space-y-1.5">
+                            <span className="text-[8px] text-slate-405 font-mono uppercase tracking-wider block font-bold">Or select a preset badge:</span>
+                            <div className="flex gap-2">
+                              {[
+                                "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150",
+                                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
+                                "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150",
+                                "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=150"
+                              ].map((url) => (
+                                <button
+                                  key={url}
+                                  type="button"
+                                  onClick={() => setEditAvatar(url)}
+                                  className={`relative rounded-full p-0.5 border-2 transition ${editAvatar === url ? "border-primary" : "border-transparent"}`}
+                                >
+                                  <img src={url} className="w-8 h-8 rounded-full object-cover" />
+                                  {editAvatar === url && (
+                                    <div className="absolute -bottom-0.5 -right-0.5 bg-primary text-white rounded-full p-0.5 text-[6px]">✓</div>
+                                  )}
+                                </button>
+                              ))}
+                            </div>
                           </div>
                         </div>
 
@@ -622,7 +660,9 @@ export default function UserDashboard({
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {menuItems.map((item, idx) => {
-                    const isToday = idx === 0; // Simulate today is Monday
+                    const currentDayOfWeek = new Date().getDay(); // 0 is Sunday, 1 is Monday, etc.
+                    const todayIdx = currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1;
+                    const isToday = idx === todayIdx;
                     return (
                       <div key={item.day} className={`p-5 rounded-2xl border transition-all ${
                         isToday 

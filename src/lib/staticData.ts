@@ -208,31 +208,47 @@ export const MOCK_TESTIMONIALS: Testimonial[] = [
 ];
 
 export const MOCK_GALLERY: GalleryItem[] = [
-  // --- ROOMS ---
-  { id: "g-r-1", title: "Premium Master Bed Unit", category: "Rooms", imageUrl: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=600" },
-  { id: "g-r-2", title: "Cozy Double Sharing Setup", category: "Rooms", imageUrl: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=600" },
-  { id: "g-r-3", title: "Classic Triple Sharing Suite", category: "Rooms", imageUrl: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=600" },
-  { id: "g-r-4", title: "Luxury Study Corner Unit", category: "Rooms", imageUrl: "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=600" },
-  { id: "g-r-5", title: "Under-Bed Slide Storage Beds", category: "Rooms", imageUrl: "https://images.unsplash.com/photo-1560185127-6a2806647f81?auto=format&fit=crop&q=80&w=600" },
-
-  // --- BALCONY ---
-  { id: "g-b-1", title: "Lush Green Balcony Views", category: "Balcony", imageUrl: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=600" },
-  { id: "g-b-2", title: "Attached Balcony Sitout Area", category: "Balcony", imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" },
-
-  // --- WASHROOM ---
-  { id: "g-ws-1", title: "Clean Sanitary Fittings", category: "Washroom", imageUrl: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" },
-  { id: "g-ws-2", title: "Modern Ceramic Vanity Basin", category: "Washroom", imageUrl: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&q=80&w=600" },
-
-  // --- KITCHEN ---
-  { id: "g-k-1", title: "Modular Self-Cooking Kitchen", category: "Kitchen", imageUrl: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=600" },
-
-  // --- LOBBY & ENTRANCE ---
-  { id: "g-le-1", title: "Entrance Foyer Gates", category: "Lobby & Entrance", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" },
-  { id: "g-le-2", title: "Visitor Meeting Reception Bay", category: "Lobby & Entrance", imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" },
-
-  // --- AMENITIES ---
-  { id: "g-a-1", title: "High-Focus Quiet Library Lounge", category: "Amenities", imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=600" },
-  { id: "g-a-2", title: "Modern Multi-Gym Activity Zone", category: "Amenities", imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600" }
+  { id: "g-1", title: "Premium Double Sharing Room", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1zse7mJuhjmUzMr1wgNc74k1wZXpc34rg" },
+  { id: "g-2", title: "Scenic Balcony Area", category: "Balcony", imageUrl: "https://lh3.googleusercontent.com/d/1ylk-KbkSXE6MFVqhw3url208fNmvPxxR" },
+  { id: "g-3", title: "Cozy Bedroom Layout", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1y2vETxeM1JrPpKqpL9bILVrxHkLnlg7k" },
+  { id: "g-4", title: "Comfort Single Bed Setup", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1uZ6AY4vGpbpyJqpTxudWbmXi_oVWJfLp" },
+  { id: "g-5", title: "Premium Room Interior", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1tfgK68mlYYR20SzMhtOnUqI1xv7KorTo" },
+  { id: "g-6", title: "Neat Triple Sharing Layout", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1tFLBhC7JFrk_G7VRb6rMlO5KdSu2bCA0" },
+  { id: "g-7", title: "Personal Wooden Wardrobes", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1srqpkUyBAU0QQ0HKpC8h_AKmMso_gjTT" },
+  { id: "g-8", title: "Bright Triple Sharing Room", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1sJ0pZmItqqP27Ae5etAqS4jGaSr76EUz" },
+  { id: "g-9", title: "High-Efficiency Split AC", category: "Amenities", imageUrl: "https://lh3.googleusercontent.com/d/1r86Va5JgoWe8r7nBmeXnPHxqk2EDRPG2" },
+  { id: "g-10", title: "Spacious Student Room View", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1qMg1Rql1q9mew7PD9JZNJXcHCSGd4Ezr" },
+  { id: "g-11", title: "Clean Shared Kitchen Space", category: "Kitchen", imageUrl: "https://lh3.googleusercontent.com/d/1q3wvVe0j1EgkmPWHGq0OIof8f72k0-gw" },
+  { id: "g-12", title: "Attached Balcony Sitout", category: "Balcony", imageUrl: "https://lh3.googleusercontent.com/d/1ozszK3nUlN6wcWn84INJ3hCYu6vj2iJQ" },
+  { id: "g-13", title: "Premium Double Bed Suite", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1naYixYQBaVanreE0kMVh2ElAObwjVKsH" },
+  { id: "g-14", title: "Ventilated Balcony View", category: "Balcony", imageUrl: "https://lh3.googleusercontent.com/d/1lYvjpA_OSovPxIK0Hj9MnxkYcmWqSydG" },
+  { id: "g-15", title: "Welcome Foyer Entrance", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/1fF1-YNPoX5IPU5IHGDUPkAg22oaN4KlJ" },
+  { id: "g-16", title: "Neat Room Bed Setting", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1d-vB6fouXibNRuXPghgXmPkP5xUeJ-QH" },
+  { id: "g-17", title: "Modern Tiled Washroom", category: "Washroom", imageUrl: "https://lh3.googleusercontent.com/d/1Xy2HbfpZXtD7OIZxhx90WxE6zVvlFLJH" },
+  { id: "g-18", title: "Spacious Clothes Wardrobe", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1Xmj2E-PXR-tTNJFjLv46Gdpsdugjk66H" },
+  { id: "g-19", title: "Polished Reception Lobby", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/1XlpFkpBV95qKFvlbv-UqaeVg1f-BKr4q" },
+  { id: "g-20", title: "Attached Sanitary Bathroom", category: "Washroom", imageUrl: "https://lh3.googleusercontent.com/d/1WQbsAASaU7Wz7PQQjsxYpzxd8aSk-50I" },
+  { id: "g-21", title: "Spacious Well-lit Corridor", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/1W612SVUwL_CfZiwXd8Upj3-dbHBggi8O" },
+  { id: "g-22", title: "Modern Single Occupancy Room", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1SvL6EkJ-WlNVHSFnnlb-mpo9P5_281P-" },
+  { id: "g-23", title: "Hygienic Bathroom Fittings", category: "Washroom", imageUrl: "https://lh3.googleusercontent.com/d/1OJY-6mv6J0K8gF2r-waUGMpT89PnwhNN" },
+  { id: "g-24", title: "Comfortable Sitting Lobby", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/1O3wZuTjTpd0FglJYHYLWdPMuh7bYQBd0" },
+  { id: "g-25", title: "Visitor Meeting Lounge", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/1NJxDbVA3HaODqBCWm4z85hWRuhiq0HYQ" },
+  { id: "g-26", title: "Safety Security Corridor", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/1KzEYDGgEbMlLk_dLVwFZVc89p8p1oqL6" },
+  { id: "g-27", title: "Deluxe Balcony Room Option", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/1IbS1dtGPJg-Gokjr2ad03JWp2T9qPGJk" },
+  { id: "g-28", title: "Modular Common Kitchen", category: "Kitchen", imageUrl: "https://lh3.googleusercontent.com/d/1C4FLQ4OxnQGJ_VU91qVinmx4fuIDtj8i" },
+  { id: "g-29", title: "Polished Ground Floor Lobby", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/1B8C7XJLE23MReTbiNCT6A_63QYs450E8" },
+  { id: "g-30", title: "Individual Room AC Control", category: "Amenities", imageUrl: "https://lh3.googleusercontent.com/d/1AkMGoD0m17dB85fpUjKhe6bRp1gHEHI3" },
+  { id: "g-31", title: "First Floor Security Corridor", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/1AXYdDmknJZz7DoYebiqFnlYNrCcG2sd2" },
+  { id: "g-32", title: "High-Focus Quiet Study Lounge", category: "Amenities", imageUrl: "https://lh3.googleusercontent.com/d/18FmWMnxYUV9mfL0GzY83KJyU_e_Ccs3L" },
+  { id: "g-33", title: "Standard Triple Room Unit", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/17zZcbmOdlQcHh9Igcvc0EH35eKmfKPWc" },
+  { id: "g-34", title: "Deluxe Single Bed Layout", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/17IOrhN9BmH4wv6wPRn_Es9JZnN8jFyzy" },
+  { id: "g-35", title: "Main Biometric Entrance Gate", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/171mt5ujsqsMbUbKAJLrNmyU8Yz01-2jm" },
+  { id: "g-36", title: "Cozy Double Sharing Bed View", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/16Gcpays0hMG8v58pshwSH4O7yCB8_xFl" },
+  { id: "g-37", title: "Room Interior and Lighting", category: "Rooms", imageUrl: "https://lh3.googleusercontent.com/d/16AiZv9MOb9TxOuw0DSUGOjDcpmJBeHM-" },
+  { id: "g-38", title: "Modern Clean Washroom Suite", category: "Washroom", imageUrl: "https://lh3.googleusercontent.com/d/11C1uIkG-L0QxUgYqQg_PUhWYh34a9hMa" },
+  { id: "g-39", title: "Main Gate Foyer Entrance", category: "Lobby & Entrance", imageUrl: "https://lh3.googleusercontent.com/d/100cenSVTNM-DZwlbZo3_VWB73Etpfqtj" },
+  { id: "g-40", title: "Common RO Water Purifier", category: "Amenities", imageUrl: "https://lh3.googleusercontent.com/d/1-pUP2tWfLYc5xFYZZAiCZhscxVVi3ms2" },
+  { id: "g-41", title: "Weekly Balanced Food Menu", category: "Food Menu", imageUrl: "https://lh3.googleusercontent.com/d/1AdO9E13LslfAxWBfqPMaj8Hy3OW-rBWs" }
 ];
 
 export const WEEKLY_FOOD_MENU: FoodMenuDay[] = [
@@ -288,6 +304,7 @@ export const WEEKLY_FOOD_MENU: FoodMenuDay[] = [
 ];
 
 export const MOCK_FAQ: FAQItem[] = [
+  // --- GENERAL ---
   {
     id: "fq-1",
     question: "What is the guest gate closing time at Comfort Girls PG?",
@@ -301,30 +318,6 @@ export const MOCK_FAQ: FAQItem[] = [
     category: "General"
   },
   {
-    id: "fq-3",
-    question: "How does security document verification work?",
-    answer: "We mandate Government ID verification (Aadhaar/Passport) and College ID or Employment allocation documentation. You can upload digital copies inside our clean digital onboarding flow or complete it on site. Digital approvals finish within 12 hours.",
-    category: "Booking & Payments"
-  },
-  {
-    id: "fq-4",
-    question: "Is there an advance notification required before moving out?",
-    answer: "Yes, we require a strict 30-day notice period submitted easily on your student dashboard. This allows our accounting module to process your full security deposit refunded in max 7 bank days from exit date.",
-    category: "Booking & Payments"
-  },
-  {
-    id: "fq-5",
-    question: "Are daily balanced meals included in the monthly rent price?",
-    answer: "Absolutely! Our monthly PG rent includes four gourmet balanced meals (Breakfast, Lunch, High Tea snacks, and Dinner) completely free. Feeding menus are updated weekly in your dashboard and certified by nutritional experts.",
-    category: "Rules & Food"
-  },
-  {
-    id: "fq-6",
-    question: "How do security deposits compare, and is there any registration surcharge?",
-    answer: "Our security deposit is totally transparent, roughly 1.5 months of your monthly rent, totally refundable. We protect our residents by charging 0 extra administration fees and zero brokerage.",
-    category: "Booking & Payments"
-  },
-  {
     id: "fq-7",
     question: "Can I choose my roommates?",
     answer: "When booking a Duo or Trio room, you can view the educational background and general hobbies of active residents inside that room before conforming. You can also send them an introduction request!",
@@ -335,5 +328,83 @@ export const MOCK_FAQ: FAQItem[] = [
     question: "What items do I need to bring at move-in?",
     answer: "Your premium room comes key-ready with high quality foam mattresses, a study desk, custom wardrobe, attached curtains and television. You only need to bring personal linens, books, laptops and personal vanity items.",
     category: "General"
+  },
+
+  // --- SAFETY ---
+  {
+    id: "fq-s1",
+    question: "What security measures are in place at Comfort Girls PG?",
+    answer: "We have 24/7 CCTV surveillance across all corridors and common spaces, biometric access gates, professional female security guards, and a resident warden present at all times to ensure maximum safety.",
+    category: "Safety"
+  },
+  {
+    id: "fq-s2",
+    question: "Can guests or visitors visit my room?",
+    answer: "For security and privacy reasons, male visitors are strictly restricted to the lobby reception area. Female visitors and mothers can visit rooms only with pre-authorization and entry logs from the warden.",
+    category: "Safety"
+  },
+  {
+    id: "fq-s3",
+    question: "How do you handle medical emergencies?",
+    answer: "We have a first-aid station on site, tie-ups with nearby multi-specialty hospitals, and a 24/7 on-call vehicle for medical transit. The warden is trained to coordinate emergencies immediately.",
+    category: "Safety"
+  },
+  {
+    id: "fq-s4",
+    question: "Are there fire safety systems installed?",
+    answer: "Yes, the building is fully equipped with fire extinguishers on every floor, smoke detectors in rooms, clear emergency exit pathways, and we conduct regular evacuation drills.",
+    category: "Safety"
+  },
+
+  // --- MESS ---
+  {
+    id: "fq-5",
+    question: "Are daily balanced meals included in the monthly rent price?",
+    answer: "Absolutely! Our monthly PG rent includes four gourmet balanced meals (Breakfast, Lunch, High Tea snacks, and Dinner) completely free. Feeding menus are updated weekly in your dashboard and certified by nutritional experts.",
+    category: "Mess"
+  },
+  {
+    id: "fq-m1",
+    question: "Can I get special meals if I am sick?",
+    answer: "Yes, if you are unwell, you can inform the kitchen staff or log a request in the app to receive light, non-spicy meals like khichdi, porridge, or warm soup.",
+    category: "Mess"
+  },
+  {
+    id: "fq-m2",
+    question: "What are the timings for the mess?",
+    answer: "Timings are: Breakfast (8:00 AM – 9:30 AM), Lunch (1:00 PM – 2:30 PM), Snacks & Tea (5:00 PM – 6:00 PM), and Dinner (8:00 PM – 9:30 PM).",
+    category: "Mess"
+  },
+  {
+    id: "fq-m3",
+    question: "Is the kitchen staff trained in hygiene standards?",
+    answer: "Yes, our kitchen staff undergoes periodic health checkups and adheres strictly to hygiene guidelines, including wearing gloves, hairnets, and daily sanitization of the cooking area.",
+    category: "Mess"
+  },
+
+  // --- BOOKING & DEPOSIT ---
+  {
+    id: "fq-3",
+    question: "How does security document verification work?",
+    answer: "We mandate Government ID verification (Aadhaar/Passport) and College ID or Employment allocation documentation. You can upload digital copies inside our clean digital onboarding flow or complete it on site. Digital approvals finish within 12 hours.",
+    category: "Booking & Deposit"
+  },
+  {
+    id: "fq-4",
+    question: "Is there an advance notification required before moving out?",
+    answer: "Yes, we require a strict 30-day notice period submitted easily on your student dashboard. This allows our accounting module to process your full security deposit refunded in max 7 bank days from exit date.",
+    category: "Booking & Deposit"
+  },
+  {
+    id: "fq-6",
+    question: "How do security deposits compare, and is there any registration surcharge?",
+    answer: "Our security deposit is totally transparent, roughly 1.5 months of your monthly rent, totally refundable. We protect our residents by charging 0 extra administration fees and zero brokerage.",
+    category: "Booking & Deposit"
+  },
+  {
+    id: "fq-bd1",
+    question: "Are there any extra maintenance or electricity charges?",
+    answer: "No, there are no hidden maintenance fees. Room cleaning and high-speed wifi are included. Electricity charges are calculated transparently based on individual sub-meter readings for AC usage.",
+    category: "Booking & Deposit"
   }
 ];

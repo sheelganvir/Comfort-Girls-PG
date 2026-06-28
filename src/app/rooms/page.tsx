@@ -55,7 +55,7 @@ function RoomsContent() {
             Back to Home
           </button>
           <h1 className="font-display font-black text-3xl sm:text-4xl text-slate-900 dark:text-white">
-            Available PG Suites
+            Available PG Rooms
           </h1>
           <p className="text-sm text-slate-500 max-w-xl font-light">
             Each suite features biometric secure entry locks, private wardrobes, high-velocity cooling systems, and full organic nutritional meal subscriptions.
